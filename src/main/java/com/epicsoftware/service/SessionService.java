@@ -1,4 +1,8 @@
-package com.epicsoftware.android;
+package com.epicsoftware.service;
+
+import com.epicsoftware.entity.Session;
+import com.epicsoftware.entity.SessionDeserializer;
+import com.epicsoftware.webservice.SessionWebService;
 
 import java.util.List;
 

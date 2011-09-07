@@ -1,4 +1,4 @@
-package com.epicsoftware.android;
+package com.epicsoftware.webservice;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

@@ -1,4 +1,4 @@
-package com.epicsoftware.android;
+package com.epicsoftware.android.async;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
+import com.epicsoftware.android.R;
+import com.epicsoftware.android.activity.SessionDetails;
+import com.epicsoftware.android.global.AppDelegate;
+import com.epicsoftware.android.global.SeparatedListAdapter;
+import com.epicsoftware.entity.Session;
+import com.epicsoftware.service.SessionService;
 import java.util.*;
 
 public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>> {
@@ -29,7 +34,7 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
     @Override
     protected void onPostExecute(final List<Session> sessionsList) {
         if (sessionsList == null || sessionsList.size() < 1) {
-            //DialogHelper.showDialogWithMessageAndTitle("No network connection", "This application requires some form of internet connectivity to function", activity);
+            //DialogHelper.showDialogWithMessageAndTitle("No network connection", "This application requires some form of internet connectivity to function", activityy);
         } else {
             adapter = new SeparatedListAdapter(activity);
 

@@ -1,4 +1,4 @@
-package com.epicsoftware.android;
+package com.epicsoftware.entity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

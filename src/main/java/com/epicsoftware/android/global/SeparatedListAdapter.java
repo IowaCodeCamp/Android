@@ -1,4 +1,4 @@
-package com.epicsoftware.android;
+package com.epicsoftware.android.global;
 
 import android.content.Context;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import com.epicsoftware.android.R;
+import com.epicsoftware.entity.Session;
 
 import java.util.LinkedHashMap;
 import java.util.List;

@@ -1,21 +1,19 @@
-package com.epicsoftware.android;
+package com.epicsoftware.android.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+import com.epicsoftware.android.R;
+import com.epicsoftware.android.global.AppDelegate;
+import com.epicsoftware.entity.Session;
 
 public class SessionDetails extends Activity {
-
-    private static String TAG = "IowaCodeCamp";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG, "onCreate");
         setContentView(R.layout.sessiondetails);
 
         Session selectedSession = ((AppDelegate) getApplicationContext()).getSelectedSession();
 
-        System.out.println("selectedSession.getSession() = " + selectedSession.getSession());
+        System.out.println("selected session was... " + selectedSession.getSession());
     }
 }

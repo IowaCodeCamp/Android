@@ -1,4 +1,4 @@
-package com.epicsoftware.android;
+package com.epicsoftware.entity;
 
 import org.junit.Assert;
 import org.junit.Test;

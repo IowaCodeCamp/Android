@@ -1,4 +1,4 @@
-package com.epicsoftware.android;
+package com.epicsoftware.entity;
 
 public class Session {
     private String session;

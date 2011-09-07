@@ -1,6 +1,7 @@
-package com.epicsoftware.android;
+package com.epicsoftware.android.global;
 
 import android.app.Application;
+import com.epicsoftware.entity.Session;
 
 public class AppDelegate extends Application {
     private Session selectedSession;
