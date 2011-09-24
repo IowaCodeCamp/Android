@@ -13,6 +13,7 @@ import com.epicsoftware.android.activity.SessionDetails;
 import com.epicsoftware.android.global.AppDelegate;
 import com.epicsoftware.android.global.SeparatedListAdapter;
 import com.epicsoftware.entity.Session;
+import com.epicsoftware.entity.SpecialSessionIdentifier;
 import com.epicsoftware.service.SessionService;
 
 import java.util.*;
@@ -21,10 +22,12 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
     private Activity activity;
     private AppDelegate delegate;
     private SeparatedListAdapter adapter = null;
+    private SpecialSessionIdentifier identifier;
 
     public GetSessionsAsyncTask(Activity activity, Context context) {
         this.activity = activity;
         this.delegate = (AppDelegate) context;
+        this.identifier = new SpecialSessionIdentifier();
     }
 
     @Override
@@ -49,6 +52,10 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     Session s = (Session) adapter.getItem(i);
+
+                    if (identifier.sessionNameRequiresSpecialTreatment(s.getSession())) {
+                        return;
+                    }
 
                     delegate.setSelectedSession(s);
 
