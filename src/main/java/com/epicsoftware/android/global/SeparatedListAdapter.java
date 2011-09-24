@@ -8,7 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import com.epicsoftware.android.R;
 import com.epicsoftware.entity.Session;
+import com.epicsoftware.entity.SpecialSessionIdentifier;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,9 +20,11 @@ public class SeparatedListAdapter extends BaseAdapter {
     public final Map<String, Adapter> sections = new LinkedHashMap<String, Adapter>();
     public final ArrayAdapter<String> headers;
     public final static int TYPE_SECTION_HEADER = 0;
+    private SpecialSessionIdentifier identifier;
 
     public SeparatedListAdapter(Context context) {
         headers = new ArrayAdapter<String>(context, R.layout.list_header);
+        identifier = new SpecialSessionIdentifier();
     }
 
     public void addSection(String section, Adapter adapter, List<Session> attachedSessions) {
@@ -36,10 +40,10 @@ public class SeparatedListAdapter extends BaseAdapter {
 
             // check if position inside this section
             if (position == 0) {
-                return getSessionFromMapGivenPosition(position,section);
+                return getSessionFromMapGivenPosition(position, section);
             }
             if (position < size) {
-                return getSessionFromMapGivenPosition(position - 1,section);
+                return getSessionFromMapGivenPosition(position - 1, section);
             }
 
             // otherwise jump into next section
@@ -97,13 +101,19 @@ public class SeparatedListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         int sectionnum = 0;
+        //((LinkedHashMap) this.sections).values.toArray()[1]
         for (Object section : this.sections.keySet()) {
             Adapter adapter = sections.get(section);
             int size = adapter.getCount() + 1;
 
             // check if position inside this section
             if (position == 0) return headers.getView(sectionnum, convertView, parent);
-            if (position < size) return adapter.getView(position - 1, convertView, parent);
+            if (position < size) {
+                View itemInAdapterWithSessionAndSpeaker = adapter.getView(position - 1, convertView, parent);
+                adjustViewHeightWhenSpecialSession(position, adapter, itemInAdapterWithSessionAndSpeaker);
+
+                return itemInAdapterWithSessionAndSpeaker;
+            }
 
             // otherwise jump into next section
             position -= size;
@@ -115,6 +125,17 @@ public class SeparatedListAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
+    }
+
+    private void adjustViewHeightWhenSpecialSession(int position, Adapter adapter, View itemInAdapterWithSessionAndSpeaker) {
+        HashMap<String, String> x = (HashMap) adapter.getItem(position - 1);
+        String session = x.get("session");
+        if (identifier.sessionNameRequiresSpecialTreatment(session)) {
+            ViewGroup.LayoutParams params = itemInAdapterWithSessionAndSpeaker.getLayoutParams();
+            params.height = 35;
+            itemInAdapterWithSessionAndSpeaker.setLayoutParams(params);
+            itemInAdapterWithSessionAndSpeaker.requestLayout();
+        }
     }
 
 }
