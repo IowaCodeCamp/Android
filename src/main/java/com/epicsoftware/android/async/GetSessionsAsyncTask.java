@@ -14,6 +14,7 @@ import com.epicsoftware.android.global.AppDelegate;
 import com.epicsoftware.android.global.SeparatedListAdapter;
 import com.epicsoftware.entity.Session;
 import com.epicsoftware.service.SessionService;
+
 import java.util.*;
 
 public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>> {
@@ -69,12 +70,10 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
                 time = session.getTime();
                 sessionInfo = new LinkedHashMap<String, String>();
                 attachedSessions = new ArrayList<Session>();
-                sessionInfo.put(session.getSession(), session.getDesc());
-                attachedSessions.add(session);
+                putSessionInfoIntoList(session,attachedSessions,sessionInfo);
             } else {
                 if (session.getTime().equals(time)) {
-                    sessionInfo.put(session.getSession(), session.getDesc());
-                    attachedSessions.add(session);
+                    putSessionInfoIntoList(session,attachedSessions,sessionInfo);
                 } else {
                     addSessionInfoToAdapter(adapter, sessionInfo, time, attachedSessions);
 
@@ -82,8 +81,7 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
                     attachedSessions = null;
                     sessionInfo = new LinkedHashMap<String, String>();
                     attachedSessions = new ArrayList<Session>();
-                    sessionInfo.put(session.getSession(), session.getDesc());
-                    attachedSessions.add(session);
+                    putSessionInfoIntoList(session,attachedSessions,sessionInfo);
 
                     time = session.getTime();
                 }
@@ -91,6 +89,11 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
         }
 
         addSessionInfoToAdapter(adapter, sessionInfo, time, attachedSessions);
+    }
+
+    private void putSessionInfoIntoList(Session session, List<Session> attachedSessions, Map<String, String> sessionInfo) {
+        sessionInfo.put(session.getFormattedSession(), session.getSpeaker().getName());
+        attachedSessions.add(session);
     }
 
     private void addSessionInfoToAdapter(SeparatedListAdapter adapter, Map<String, String> sessionInfo, String time, List<Session> attachedSessions) {

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello IowaCodeCamp!</string>
-    <string name="app_name">IowaCodeCamp</string>
+    <string name="hello"></string>
+    <string name="app_name"></string>
+    <style name="LargeTitleTheme" parent="android:Theme.Black">
+        <item name="android:windowTitleSize">44dip</item>
+    </style>
 </resources>

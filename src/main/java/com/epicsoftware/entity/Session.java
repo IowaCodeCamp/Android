@@ -46,4 +46,11 @@ public class Session {
     public void setRoom(String room) {
         this.room = room;
     }
+
+    public String getFormattedSession() {
+        if (session.length() > 39)
+            return session.substring(0,39).trim() + "...";
+
+        return session;
+    }
 }

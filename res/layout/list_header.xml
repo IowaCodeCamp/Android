@@ -4,7 +4,8 @@
         android:id="@+id/list_header_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="2dip"
-        android:paddingBottom="2dip"
-        android:paddingLeft="5dip"
-        style="?android:attr/listSeparatorTextViewStyle"/>
+        android:paddingTop="0dip"
+        android:paddingBottom="0dip"
+        android:paddingLeft="2dip"
+        android:background="@color/green"
+        android:textColor="@color/white" />
