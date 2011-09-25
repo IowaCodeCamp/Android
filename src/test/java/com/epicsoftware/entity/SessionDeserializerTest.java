@@ -26,7 +26,6 @@ public class SessionDeserializerTest {
         Assert.assertEquals(sessions.get(0).getTime(), "9:00 AM - 10:30 AM");
         Assert.assertEquals(sessions.get(0).getDesc(), "very fun session");
         Assert.assertEquals(sessions.get(0).getSpeaker().getName(), "Chris Missal");
-        Assert.assertEquals(sessions.get(0).getSpeaker().getTitle(), "Rockstar");
         Assert.assertEquals(sessions.get(0).getSpeaker().getBio(), "my hero");
         Assert.assertEquals(sessions.get(0).getSpeaker().getImg(), "toranbillups.jpg");
     }

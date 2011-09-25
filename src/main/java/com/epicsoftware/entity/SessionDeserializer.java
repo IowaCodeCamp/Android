@@ -27,7 +27,6 @@ public class SessionDeserializer {
                 JSONObject speakerJsonObj = (JSONObject) item.get("speaker");
                 Speaker speaker = new Speaker();
                 speaker.setBio(speakerJsonObj.getString("bio"));
-                speaker.setTitle(speakerJsonObj.getString("title"));
                 speaker.setName(speakerJsonObj.getString("name"));
                 speaker.setImg(speakerJsonObj.getString("img"));
 
