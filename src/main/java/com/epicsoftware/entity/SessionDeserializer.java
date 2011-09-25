@@ -23,12 +23,15 @@ public class SessionDeserializer {
                 session.setTime(String.valueOf(item.get("time")).trim());
                 session.setSession(String.valueOf(item.get("session")).trim());
                 session.setDesc(String.valueOf(item.get("desc")).trim());
+                session.setRoom(String.valueOf(item.get("room")));
 
                 JSONObject speakerJsonObj = (JSONObject) item.get("speaker");
                 Speaker speaker = new Speaker();
                 speaker.setBio(speakerJsonObj.getString("bio"));
                 speaker.setName(speakerJsonObj.getString("name"));
                 speaker.setImg(speakerJsonObj.getString("img"));
+                speaker.setLocation(speakerJsonObj.getString("location"));
+                speaker.setWeb(speakerJsonObj.getString("web"));
 
                 session.setSpeaker(speaker);
 
