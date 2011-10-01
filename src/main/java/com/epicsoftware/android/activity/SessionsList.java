@@ -15,11 +15,7 @@ public class SessionsList extends Activity {
         setTitle("Iowa Code Camp");
         navigationAndTitleHelper = new NavigationAndTitleHelper(this);
         navigationAndTitleHelper.setNavigationAndTitle();
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
         GetSessionsAsyncTask task = new GetSessionsAsyncTask(SessionsList.this, getApplicationContext());
         task.execute(new String[]{""});
     }

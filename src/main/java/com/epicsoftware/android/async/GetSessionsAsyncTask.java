@@ -1,6 +1,7 @@
 package com.epicsoftware.android.async;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import android.widget.SimpleAdapter;
 import com.epicsoftware.android.R;
 import com.epicsoftware.android.activity.SessionDetails;
 import com.epicsoftware.android.global.AppDelegate;
+import com.epicsoftware.android.global.DialogHelper;
 import com.epicsoftware.android.global.SeparatedListAdapter;
 import com.epicsoftware.entity.Session;
 import com.epicsoftware.entity.SpecialSessionIdentifier;
@@ -23,11 +25,17 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
     private AppDelegate delegate;
     private SeparatedListAdapter adapter = null;
     private SpecialSessionIdentifier identifier;
+    private ProgressDialog dialog;
 
     public GetSessionsAsyncTask(Activity activity, Context context) {
         this.activity = activity;
         this.delegate = (AppDelegate) context;
         this.identifier = new SpecialSessionIdentifier();
+    }
+
+    @Override
+    protected void onPreExecute() {
+        this.dialog = ProgressDialog.show(activity, "", "Loading...");
     }
 
     @Override
@@ -37,8 +45,10 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
 
     @Override
     protected void onPostExecute(final List<Session> sessionsList) {
+        this.dialog.dismiss();
+
         if (sessionsList == null || sessionsList.size() < 1) {
-            //DialogHelper.showDialogWithMessageAndTitle("No network connection", "This application requires some form of internet connectivity to function", activityy);
+            DialogHelper.showDialogWithMessageAndTitleThatWillFinish("No network connection", "This application requires some form of internet connectivity to function", activity);
         } else {
             adapter = new SeparatedListAdapter(activity);
 
@@ -77,10 +87,10 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
                 time = session.getTime();
                 sessionInfo = new LinkedHashMap<String, String>();
                 attachedSessions = new ArrayList<Session>();
-                putSessionInfoIntoList(session,attachedSessions,sessionInfo);
+                putSessionInfoIntoList(session, attachedSessions, sessionInfo);
             } else {
                 if (session.getTime().equals(time)) {
-                    putSessionInfoIntoList(session,attachedSessions,sessionInfo);
+                    putSessionInfoIntoList(session, attachedSessions, sessionInfo);
                 } else {
                     addSessionInfoToAdapter(adapter, sessionInfo, time, attachedSessions);
 
@@ -88,7 +98,7 @@ public class GetSessionsAsyncTask extends AsyncTask<String, Void, List<Session>>
                     attachedSessions = null;
                     sessionInfo = new LinkedHashMap<String, String>();
                     attachedSessions = new ArrayList<Session>();
-                    putSessionInfoIntoList(session,attachedSessions,sessionInfo);
+                    putSessionInfoIntoList(session, attachedSessions, sessionInfo);
 
                     time = session.getTime();
                 }
