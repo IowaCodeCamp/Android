@@ -1,8 +1,11 @@
 package com.epicsoftware.android.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.epicsoftware.android.R;
@@ -25,16 +28,22 @@ public class SessionDetails extends Activity {
 
         Session selectedSession = ((AppDelegate) getApplicationContext()).getSelectedSession();
 
-        //Button viewSpeakerDetails = (Button) findViewById(R.id.speakerDetails);
-        //viewSpeakerDetails.getBackground().setColorFilter(new LightingColorFilter(Color.BLUE, Color.BLUE));
+        Button viewSpeakerDetails = (Button) findViewById(R.id.viewSpeakerDetails);
+        viewSpeakerDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent speakerDetailsView = new Intent(SessionDetails.this, SpeakerDetails.class);
+                startActivity(speakerDetailsView);
+            }
+        });
 
         TextView sessionSpeakerName = (TextView) findViewById(R.id.widget34);
         sessionSpeakerName.setText(selectedSession.getSpeaker().getName());
 
-         TextView sessionTime = (TextView) findViewById(R.id.widget36);
+        TextView sessionTime = (TextView) findViewById(R.id.widget36);
         sessionTime.setText(selectedSession.getTime());
 
-         TextView sessionRoom = (TextView) findViewById(R.id.widget38);
+        TextView sessionRoom = (TextView) findViewById(R.id.widget38);
         sessionRoom.setText(selectedSession.getRoom());
 
 

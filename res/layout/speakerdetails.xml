@@ -82,7 +82,7 @@
             >
     </TextView>
     <Button
-            android:id="@+id/viewSpeakerDetails"
+            android:id="@+id/widget40"
             android:layout_width="200dip"
             android:layout_height="wrap_content"
             android:text="View Speaker Info"
@@ -95,7 +95,7 @@
             android:paddingLeft="0dip"
             android:background="@color/black"
             android:paddingRight="0dip"
-            android:paddingTop="20dip"
+            android:paddingTop="30dip"
             >
     </Button>
     <TextView

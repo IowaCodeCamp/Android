@@ -12,6 +12,7 @@
       </intent-filter>
     </activity>
    <activity android:name=".activity.SessionDetails" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation"/>
+   <activity android:name=".activity.SpeakerDetails" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation"/>
   </application>
 
 </manifest>
