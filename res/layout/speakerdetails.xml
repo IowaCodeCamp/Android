@@ -23,7 +23,7 @@
             android:layout_width="130px"
             android:layout_height="48px"
             android:textColor="@color/white"
-            android:text="Room"
+            android:text="Location"
             android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="18sp"
@@ -46,13 +46,14 @@
     </TextView>
     <TextView
             android:id="@+id/widget35"
-            android:layout_width="130px"
+            android:layout_width="wrap_content"
             android:layout_height="48px"
+            android:maxLines="1"
             android:textColor="@color/white"
-            android:text="Time"
+            android:text=""
+            android:textSize="16sp"
             android:paddingLeft="5dip"
-            android:textStyle="bold"
-            android:textSize="18sp"
+            android:autoLink="web"
             android:layout_below="@+id/widget33"
             android:layout_alignLeft="@+id/widget33"
             >
@@ -81,29 +82,38 @@
             android:layout_alignParentLeft="true"
             >
     </TextView>
-    <Button
-            android:id="@+id/widget40"
-            android:layout_width="200dip"
-            android:layout_height="wrap_content"
-            android:text="View Speaker Info"
+    <TextView
+            android:id="@+id/locationBlank"
+            android:layout_width="wrap_content"
+            android:layout_height="48px"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:text=""
+            android:textSize="16sp"
+            android:paddingTop="2dip"
+            android:layout_alignTop="@+id/locationInfo"
+            android:layout_toRightOf="@+id/locationInfo"
+            >
+    </TextView>
+    <TextView
+            android:id="@+id/locationInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="48px"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:text=""
+            android:textSize="16sp"
+            android:paddingLeft="5dip"
             android:layout_below="@+id/widget38"
             android:layout_alignLeft="@+id/widget37"
-            android:textColor="@color/orange"
-            android:layout_marginLeft="-25dip"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:paddingLeft="0dip"
-            android:background="@color/black"
-            android:paddingRight="0dip"
-            android:paddingTop="30dip"
             >
-    </Button>
+    </TextView>
     <TextView
             android:id="@+id/widget33"
             android:layout_width="130px"
             android:layout_height="48px"
             android:textColor="@color/white"
-            android:text="Speaker"
+            android:text="Website"
             android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="18sp"

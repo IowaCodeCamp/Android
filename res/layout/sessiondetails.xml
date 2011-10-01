@@ -85,7 +85,7 @@
             android:id="@+id/viewSpeakerDetails"
             android:layout_width="200dip"
             android:layout_height="wrap_content"
-            android:text="View Speaker Info"
+            android:text="View Speaker Details"
             android:layout_below="@+id/widget38"
             android:layout_alignLeft="@+id/widget37"
             android:textColor="@color/orange"
