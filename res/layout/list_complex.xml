@@ -2,10 +2,10 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="41dip"
+        android:layout_height="51dip"
         android:orientation="vertical"
-        android:paddingTop="0dip"
-        android:paddingBottom="2dip"
+        android:paddingTop="3dip"
+        android:paddingBottom="0dip"
         android:paddingLeft="2dip"
         >
     <TextView
@@ -16,12 +16,13 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:maxLines="1"
+            android:paddingBottom="2dip"
             />
     <TextView
             android:id="@+id/list_complex_caption"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:textColor="@color/white"
             />
 </LinearLayout>

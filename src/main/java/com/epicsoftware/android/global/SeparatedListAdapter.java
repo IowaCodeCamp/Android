@@ -132,7 +132,7 @@ public class SeparatedListAdapter extends BaseAdapter {
         String session = x.get("session");
         if (identifier.sessionNameRequiresSpecialTreatment(session)) {
             ViewGroup.LayoutParams params = itemInAdapterWithSessionAndSpeaker.getLayoutParams();
-            params.height = 35;
+            params.height = 45;
             itemInAdapterWithSessionAndSpeaker.setLayoutParams(params);
             itemInAdapterWithSessionAndSpeaker.requestLayout();
         }
