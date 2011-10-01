@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 
 public class SessionWebService {
     public String getListOfSessions() {
-        HttpGet httpget = new HttpGet("http://toranbillups.com/content/examples/icc.html");
+        HttpGet httpget = new HttpGet("http://iowacodecamp.com/data/json");
         return executeHttpRequest(httpget);
     }
 
