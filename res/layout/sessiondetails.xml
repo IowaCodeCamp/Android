@@ -10,20 +10,21 @@
             android:layout_width="wrap_content"
             android:layout_height="48px"
             android:maxLines="1"
-            android:paddingLeft="5dip"
             android:textColor="@color/white"
             android:text=""
             android:textSize="16sp"
+            android:paddingTop="2dip"
             android:layout_alignTop="@+id/widget37"
-            android:layout_alignLeft="@+id/widget36"
+            android:layout_toRightOf="@+id/widget37"
             >
     </TextView>
     <TextView
             android:id="@+id/widget37"
-            android:layout_width="115px"
+            android:layout_width="130px"
             android:layout_height="48px"
             android:textColor="@color/white"
             android:text="Room"
+            android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_below="@+id/widget36"
@@ -35,20 +36,21 @@
             android:layout_width="wrap_content"
             android:layout_height="48px"
             android:maxLines="1"
-            android:paddingLeft="5dip"
             android:textColor="@color/white"
             android:text=""
             android:textSize="16sp"
+            android:paddingTop="2dip"
             android:layout_alignTop="@+id/widget35"
-            android:layout_alignRight="@+id/widget34"
+            android:layout_toRightOf="@+id/widget35"
             >
     </TextView>
     <TextView
             android:id="@+id/widget35"
-            android:layout_width="115px"
+            android:layout_width="130px"
             android:layout_height="48px"
             android:textColor="@color/white"
             android:text="Time"
+            android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_below="@+id/widget33"
@@ -63,8 +65,9 @@
             android:textColor="@color/white"
             android:text=""
             android:textSize="16sp"
+            android:paddingTop="2dip"
             android:layout_alignTop="@+id/widget33"
-            android:layout_alignRight="@+id/widget31"
+            android:layout_toRightOf="@+id/widget33"
             >
     </TextView>
     <TextView
@@ -89,10 +92,11 @@
     </Button>
     <TextView
             android:id="@+id/widget33"
-            android:layout_width="105px"
+            android:layout_width="130px"
             android:layout_height="48px"
             android:textColor="@color/white"
             android:text="Speaker"
+            android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_alignTop="@+id/widget32"
