@@ -1,6 +1,7 @@
 package com.epicsoftware.android.global;
 
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -21,10 +22,12 @@ public class SeparatedListAdapter extends BaseAdapter {
     public final ArrayAdapter<String> headers;
     public final static int TYPE_SECTION_HEADER = 0;
     private SpecialSessionIdentifier identifier;
+    private Context context;
 
     public SeparatedListAdapter(Context context) {
         headers = new ArrayAdapter<String>(context, R.layout.list_header);
         identifier = new SpecialSessionIdentifier();
+        this.context = context;
     }
 
     public void addSection(String section, Adapter adapter, List<Session> attachedSessions) {
@@ -101,7 +104,6 @@ public class SeparatedListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         int sectionnum = 0;
-        //((LinkedHashMap) this.sections).values.toArray()[1]
         for (Object section : this.sections.keySet()) {
             Adapter adapter = sections.get(section);
             int size = adapter.getCount() + 1;
@@ -110,7 +112,7 @@ public class SeparatedListAdapter extends BaseAdapter {
             if (position == 0) return headers.getView(sectionnum, convertView, parent);
             if (position < size) {
                 View itemInAdapterWithSessionAndSpeaker = adapter.getView(position - 1, convertView, parent);
-                adjustViewHeightWhenSpecialSession(position, adapter, itemInAdapterWithSessionAndSpeaker);
+                adjustViewHeightWhenSpecialSession(position, adapter, itemInAdapterWithSessionAndSpeaker, this.context);
 
                 return itemInAdapterWithSessionAndSpeaker;
             }
@@ -127,12 +129,13 @@ public class SeparatedListAdapter extends BaseAdapter {
         return position;
     }
 
-    private void adjustViewHeightWhenSpecialSession(int position, Adapter adapter, View itemInAdapterWithSessionAndSpeaker) {
+    private void adjustViewHeightWhenSpecialSession(int position, Adapter adapter, View itemInAdapterWithSessionAndSpeaker, Context context) {
         HashMap<String, String> x = (HashMap) adapter.getItem(position - 1);
         String session = x.get("session");
         if (identifier.sessionNameRequiresSpecialTreatment(session)) {
             ViewGroup.LayoutParams params = itemInAdapterWithSessionAndSpeaker.getLayoutParams();
-            params.height = 45;
+            int dipHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,(float) 32.0, context.getResources().getDisplayMetrics());
+            params.height = dipHeight;
             itemInAdapterWithSessionAndSpeaker.setLayoutParams(params);
             itemInAdapterWithSessionAndSpeaker.requestLayout();
         }

@@ -28,17 +28,17 @@ public class SpeakerDetails extends Activity {
         TextView sessionTime = (TextView) findViewById(R.id.locationInfo);
         sessionTime.setText(selectedSpeaker.getLocation());
 
-        TextView sessionRoom = (TextView) findViewById(R.id.widget35);
+        TextView sessionRoom = (TextView) findViewById(R.id.webUrl);
         sessionRoom.setText(selectedSpeaker.getWeb());
 
-        TextView sessionTitle = (TextView) findViewById(R.id.widget31);
+        TextView sessionTitle = (TextView) findViewById(R.id.speakerName);
         sessionTitle.setText(selectedSpeaker.getName());
 
-        TextView filterText = (TextView) findViewById(R.id.widget39);
+        TextView filterText = (TextView) findViewById(R.id.speakerBio);
         filterText.setText(selectedSpeaker.getBio());
         filterText.setMovementMethod(new ScrollingMovementMethod());
 
-        ImageView vw = (ImageView) findViewById(R.id.widget32);
+        ImageView vw = (ImageView) findViewById(R.id.speakerImg);
         MovieImgLoadingTask imgTask = new MovieImgLoadingTask(vw);
         imgTask.execute(new String[]{selectedSpeaker.getImg()});
     }

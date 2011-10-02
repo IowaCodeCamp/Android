@@ -6,9 +6,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         >
     <TextView
-            android:id="@+id/widget38"
+            android:id="@+id/roomName"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -22,21 +22,21 @@
     </TextView>
     <TextView
             android:id="@+id/widget37"
-            android:layout_width="130px"
-            android:layout_height="48px"
+           android:layout_width="85dip"
+            android:layout_height="35dip"
             android:textColor="@color/white"
             android:text="Room"
             android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_below="@+id/widget36"
+            android:layout_below="@+id/timeOfSession"
             android:layout_alignLeft="@+id/widget35"
             >
     </TextView>
     <TextView
-            android:id="@+id/widget36"
+            android:id="@+id/timeOfSession"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -50,8 +50,8 @@
     </TextView>
     <TextView
             android:id="@+id/widget35"
-            android:layout_width="130px"
-            android:layout_height="48px"
+           android:layout_width="85dip"
+            android:layout_height="35dip"
             android:textColor="@color/white"
             android:text="Time"
             android:paddingLeft="5dip"
@@ -62,9 +62,9 @@
             >
     </TextView>
     <TextView
-            android:id="@+id/widget34"
+            android:id="@+id/speakerName"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -77,13 +77,13 @@
             >
     </TextView>
     <TextView
-            android:id="@+id/widget39"
+            android:id="@+id/sessionDescription"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="@color/white"
             android:text=""
             android:textSize="14sp"
-            android:layout_below="@+id/widget32"
+            android:layout_below="@+id/speakerImg"
             android:layout_alignParentLeft="true"
             >
     </TextView>
@@ -92,7 +92,7 @@
             android:layout_width="200dip"
             android:layout_height="wrap_content"
             android:text="View Speaker Details"
-            android:layout_below="@+id/widget38"
+            android:layout_below="@+id/roomName"
             android:layout_alignLeft="@+id/widget37"
             android:textColor="@color/orange"
             android:layout_marginLeft="-13dip"
@@ -101,33 +101,32 @@
             android:paddingLeft="0dip"
             android:background="@color/black"
             android:paddingRight="0dip"
-            android:paddingTop="20dip"
             >
     </Button>
     <TextView
             android:id="@+id/widget33"
-            android:layout_width="130px"
-            android:layout_height="48px"
+           android:layout_width="85dip"
+            android:layout_height="35dip"
             android:textColor="@color/white"
             android:text="Speaker"
             android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_alignTop="@+id/widget32"
-            android:layout_toRightOf="@+id/widget32"
+            android:layout_alignTop="@+id/speakerImg"
+            android:layout_toRightOf="@+id/speakerImg"
             >
     </TextView>
     <ImageView
-            android:id="@+id/widget32"
+            android:id="@+id/speakerImg"
             android:layout_width="107dip"
             android:layout_height="150dip"
             android:textSize="13sp"
-            android:layout_below="@+id/widget31"
+            android:layout_below="@+id/sessionTitle"
             android:layout_alignParentLeft="true"
             >
     </ImageView>
     <TextView
-            android:id="@+id/widget31"
+            android:id="@+id/sessionTitle"
             android:layout_width="wrap_content"
             android:maxLines="2"
             android:layout_height="wrap_content"

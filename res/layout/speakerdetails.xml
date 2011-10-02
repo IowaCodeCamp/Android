@@ -8,7 +8,7 @@
     <TextView
             android:id="@+id/widget38"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -20,34 +20,34 @@
     </TextView>
     <TextView
             android:id="@+id/widget37"
-            android:layout_width="130px"
-            android:layout_height="48px"
+           android:layout_width="85dip"
+            android:layout_height="35dip"
             android:textColor="@color/white"
             android:text="Location"
             android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_below="@+id/widget36"
-            android:layout_alignLeft="@+id/widget35"
+            android:layout_alignLeft="@+id/webUrl"
             >
     </TextView>
     <TextView
             android:id="@+id/widget36"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
             android:textSize="14sp"
             android:paddingTop="2dip"
-            android:layout_alignTop="@+id/widget35"
-            android:layout_toRightOf="@+id/widget35"
+            android:layout_alignTop="@+id/webUrl"
+            android:layout_toRightOf="@+id/webUrl"
             >
     </TextView>
     <TextView
-            android:id="@+id/widget35"
+            android:id="@+id/webUrl"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -61,7 +61,7 @@
     <TextView
             android:id="@+id/widget34"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -72,20 +72,20 @@
             >
     </TextView>
     <TextView
-            android:id="@+id/widget39"
+            android:id="@+id/speakerBio"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="@color/white"
             android:text=""
             android:textSize="14sp"
-            android:layout_below="@+id/widget32"
+            android:layout_below="@+id/speakerImg"
             android:layout_alignParentLeft="true"
             >
     </TextView>
     <TextView
             android:id="@+id/locationBlank"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -98,7 +98,7 @@
     <TextView
             android:id="@+id/locationInfo"
             android:layout_width="wrap_content"
-            android:layout_height="48px"
+            android:layout_height="35dip"
             android:maxLines="1"
             android:textColor="@color/white"
             android:text=""
@@ -110,28 +110,28 @@
     </TextView>
     <TextView
             android:id="@+id/widget33"
-            android:layout_width="130px"
-            android:layout_height="48px"
+           android:layout_width="85dip"
+            android:layout_height="35dip"
             android:textColor="@color/white"
             android:text="Website"
             android:paddingLeft="5dip"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_alignTop="@+id/widget32"
-            android:layout_toRightOf="@+id/widget32"
+            android:layout_alignTop="@+id/speakerImg"
+            android:layout_toRightOf="@+id/speakerImg"
             >
     </TextView>
     <ImageView
-            android:id="@+id/widget32"
+            android:id="@+id/speakerImg"
             android:layout_width="107dip"
             android:layout_height="150dip"
             android:textSize="13sp"
-            android:layout_below="@+id/widget31"
+            android:layout_below="@+id/speakerName"
             android:layout_alignParentLeft="true"
             >
     </ImageView>
     <TextView
-            android:id="@+id/widget31"
+            android:id="@+id/speakerName"
             android:layout_width="wrap_content"
             android:maxLines="2"
             android:layout_height="wrap_content"

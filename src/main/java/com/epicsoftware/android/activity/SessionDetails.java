@@ -37,24 +37,24 @@ public class SessionDetails extends Activity {
             }
         });
 
-        TextView sessionSpeakerName = (TextView) findViewById(R.id.widget34);
+        TextView sessionSpeakerName = (TextView) findViewById(R.id.speakerName);
         sessionSpeakerName.setText(selectedSession.getSpeaker().getName());
 
-        TextView sessionTime = (TextView) findViewById(R.id.widget36);
+        TextView sessionTime = (TextView) findViewById(R.id.timeOfSession);
         sessionTime.setText(selectedSession.getTime());
 
-        TextView sessionRoom = (TextView) findViewById(R.id.widget38);
+        TextView sessionRoom = (TextView) findViewById(R.id.roomName);
         sessionRoom.setText(selectedSession.getRoom());
 
 
-        TextView sessionTitle = (TextView) findViewById(R.id.widget31);
+        TextView sessionTitle = (TextView) findViewById(R.id.sessionTitle);
         sessionTitle.setText(selectedSession.getSession());
 
-        TextView filterText = (TextView) findViewById(R.id.widget39);
+        TextView filterText = (TextView) findViewById(R.id.sessionDescription);
         filterText.setText(selectedSession.getDesc());
         filterText.setMovementMethod(new ScrollingMovementMethod());
 
-        ImageView vw = (ImageView) findViewById(R.id.widget32);
+        ImageView vw = (ImageView) findViewById(R.id.speakerImg);
         MovieImgLoadingTask imgTask = new MovieImgLoadingTask(vw);
         imgTask.execute(new String[]{selectedSession.getSpeaker().getImg()});
     }
