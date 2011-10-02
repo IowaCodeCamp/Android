@@ -1,4 +1,4 @@
-package com.epicsoftware.android.activity;
+package com.iowacodecamp.android.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.epicsoftware.android.R;
-import com.epicsoftware.android.async.MovieImgLoadingTask;
-import com.epicsoftware.android.global.AppDelegate;
-import com.epicsoftware.android.global.NavigationAndTitleHelper;
-import com.epicsoftware.entity.Session;
+import com.iowacodecamp.android.R;
+import com.iowacodecamp.android.async.MovieImgLoadingTask;
+import com.iowacodecamp.android.global.AppDelegate;
+import com.iowacodecamp.android.global.NavigationAndTitleHelper;
+import com.iowacodecamp.entity.Session;
 
 public class SessionDetails extends Activity {
     private NavigationAndTitleHelper navigationAndTitleHelper;

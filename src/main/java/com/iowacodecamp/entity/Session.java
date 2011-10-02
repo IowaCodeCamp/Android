@@ -1,4 +1,4 @@
-package com.epicsoftware.entity;
+package com.iowacodecamp.entity;
 
 public class Session {
     private String session;

@@ -1,4 +1,4 @@
-package com.epicsoftware.android.async;
+package com.iowacodecamp.android.async;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -9,14 +9,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import com.epicsoftware.android.R;
-import com.epicsoftware.android.activity.SessionDetails;
-import com.epicsoftware.android.global.AppDelegate;
-import com.epicsoftware.android.global.DialogHelper;
-import com.epicsoftware.android.global.SeparatedListAdapter;
-import com.epicsoftware.entity.Session;
-import com.epicsoftware.entity.SpecialSessionIdentifier;
-import com.epicsoftware.service.SessionService;
+import com.iowacodecamp.android.R;
+import com.iowacodecamp.android.activity.SessionDetails;
+import com.iowacodecamp.android.global.AppDelegate;
+import com.iowacodecamp.android.global.DialogHelper;
+import com.iowacodecamp.android.global.SeparatedListAdapter;
+import com.iowacodecamp.entity.Session;
+import com.iowacodecamp.entity.SpecialSessionIdentifier;
+import com.iowacodecamp.service.SessionService;
 
 import java.util.*;
 

@@ -1,8 +1,8 @@
-package com.epicsoftware.service;
+package com.iowacodecamp.service;
 
-import com.epicsoftware.entity.Session;
-import com.epicsoftware.entity.SessionDeserializer;
-import com.epicsoftware.webservice.SessionWebService;
+import com.iowacodecamp.entity.Session;
+import com.iowacodecamp.entity.SessionDeserializer;
+import com.iowacodecamp.webservice.SessionWebService;
 
 import java.util.List;
 

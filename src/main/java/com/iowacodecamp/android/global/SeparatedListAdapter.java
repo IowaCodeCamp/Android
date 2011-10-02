@@ -1,4 +1,4 @@
-package com.epicsoftware.android.global;
+package com.iowacodecamp.android.global;
 
 import android.content.Context;
 import android.util.TypedValue;
@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import com.epicsoftware.android.R;
-import com.epicsoftware.entity.Session;
-import com.epicsoftware.entity.SpecialSessionIdentifier;
+import com.iowacodecamp.android.R;
+import com.iowacodecamp.entity.Session;
+import com.iowacodecamp.entity.SpecialSessionIdentifier;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

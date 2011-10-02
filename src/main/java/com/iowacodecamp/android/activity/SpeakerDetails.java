@@ -1,15 +1,15 @@
-package com.epicsoftware.android.activity;
+package com.iowacodecamp.android.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.epicsoftware.android.R;
-import com.epicsoftware.android.async.MovieImgLoadingTask;
-import com.epicsoftware.android.global.AppDelegate;
-import com.epicsoftware.android.global.NavigationAndTitleHelper;
-import com.epicsoftware.entity.Speaker;
+import com.iowacodecamp.android.R;
+import com.iowacodecamp.android.async.MovieImgLoadingTask;
+import com.iowacodecamp.android.global.AppDelegate;
+import com.iowacodecamp.android.global.NavigationAndTitleHelper;
+import com.iowacodecamp.entity.Speaker;
 
 public class SpeakerDetails extends Activity {
     private NavigationAndTitleHelper navigationAndTitleHelper;

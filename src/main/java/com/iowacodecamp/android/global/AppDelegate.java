@@ -1,7 +1,7 @@
-package com.epicsoftware.android.global;
+package com.iowacodecamp.android.global;
 
 import android.app.Application;
-import com.epicsoftware.entity.Session;
+import com.iowacodecamp.entity.Session;
 
 public class AppDelegate extends Application {
     private Session selectedSession;

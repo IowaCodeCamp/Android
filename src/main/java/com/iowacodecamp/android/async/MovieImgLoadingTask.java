@@ -1,9 +1,9 @@
-package com.epicsoftware.android.async;
+package com.iowacodecamp.android.async;
 
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.widget.ImageView;
-import com.epicsoftware.android.global.SingleImageLoader;
+import com.iowacodecamp.android.global.SingleImageLoader;
 
 public class MovieImgLoadingTask extends AsyncTask<String, Void, Drawable> {
     private ImageView imageView;

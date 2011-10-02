@@ -1,4 +1,4 @@
-package com.epicsoftware.entity;
+package com.iowacodecamp.entity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

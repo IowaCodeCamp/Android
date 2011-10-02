@@ -1,4 +1,4 @@
-package com.epicsoftware.entity;
+package com.iowacodecamp.entity;
 
 import org.junit.Assert;
 import org.junit.Before;

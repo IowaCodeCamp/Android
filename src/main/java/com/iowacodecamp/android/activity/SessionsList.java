@@ -1,9 +1,9 @@
-package com.epicsoftware.android.activity;
+package com.iowacodecamp.android.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import com.epicsoftware.android.async.GetSessionsAsyncTask;
-import com.epicsoftware.android.global.NavigationAndTitleHelper;
+import com.iowacodecamp.android.async.GetSessionsAsyncTask;
+import com.iowacodecamp.android.global.NavigationAndTitleHelper;
 
 public class SessionsList extends Activity {
     private NavigationAndTitleHelper navigationAndTitleHelper;

@@ -1,4 +1,4 @@
-package com.epicsoftware.android.global;
+package com.iowacodecamp.android.global;
 
 import android.app.Activity;
 import android.graphics.Color;
